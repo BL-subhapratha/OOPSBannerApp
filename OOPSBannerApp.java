@@ -26,15 +26,15 @@ public class OOPSBannerApp {
 
         //UC4: OOPS Banner using String Array and Loop
         System.out.println("UC4: Print OOPS Banner using string array and loop");
-        String[] bannerLines = {
-            String.join(" ", "  *****  ", "  *****  ","  *****  ","  ****** "),
-            String.join(" "," *     * "," *     * "," *     * "," *      "),
-            String.join(" "," *     * "," *     * "," *     * "," *      "),
-            String.join(" "," *     * ", " *     * ", "  *****  ","  ****** "),
-            String.join(" ", " *     * ", " *     * ", " *       ","       * "),
-            String.join(" ", " *     * ", " *     * "," *       ","       * "),
-            String.join(" ", "  *****  ","  *****  "," *       ","  ****** ")
-        };
+        String[] bannerLines = new String[7];
+        bannerLines[0] = String.join(" ", "  *****  ", "  *****  ", "  *****  ", "  ****** ");
+        bannerLines[1] = String.join(" ", " *     * ", " *     * ", " *     * ", " *      ");
+        bannerLines[2] = String.join(" ", " *     * ", " *     * ", " *     * ", " *      ");
+        bannerLines[3] = String.join(" ", " *     * ", " *     * ", "  *****  ", "  ****** ");
+        bannerLines[4] = String.join(" ", " *     * ", " *     * ", " *       ", "       * ");
+        bannerLines[5] = String.join(" ", " *     * ", " *     * ", " *       ", "       * ");
+        bannerLines[6] = String.join(" ", "  *****  ", "  *****  ", " *       ", "  ****** ");
+
         for (String line : bannerLines) {
             System.out.println(line);
         }

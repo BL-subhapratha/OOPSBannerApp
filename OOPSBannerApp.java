@@ -70,41 +70,125 @@ public class OOPSBannerApp {
         for (String line : bannerFunLines) {
             System.out.println(line);
         }
+
+    // UC7: Store character pattern in a class
+        System.out.println("UC7: Store Character Pattern in a Class");
+
+        CharacterPatternMap o = new CharacterPatternMap(
+                'O',
+                new String[]{
+                        "  *****  ",
+                        " *     * ",
+                        " *     * ",
+                        " *     * ",
+                        " *     * ",
+                        " *     * ",
+                        "  *****  "
+                }
+        );
+
+        CharacterPatternMap p = new CharacterPatternMap(
+                'P',
+                new String[]{
+                        " ******  ",
+                        " *     * ",
+                        " *     * ",
+                        " ******  ",
+                        " *       ",
+                        " *       ",
+                        " *       "
+                }
+        );
+
+        CharacterPatternMap s = new CharacterPatternMap(
+                'S',
+                new String[]{
+                        "  *****  ",
+                        " *       ",
+                        " *       ",
+                        "  *****  ",
+                        "       * ",
+                        "       * ",
+                        "  ****** "
+                }
+        );
+
+        CharacterPatternMap[] word = { o, o, p, s };
+        String[] bannerLinesUC7 = new String[7];
+
+        for (int row = 0; row < 7; row++) {
+            StringBuilder lineBuilder = new StringBuilder();
+
+            for (int col = 0; col < word.length; col++) {
+                lineBuilder.append(word[col].getPattern()[row]);
+                if (col < word.length - 1) {
+                    lineBuilder.append(" ");
+                }
+            }
+            bannerLinesUC7[row] = lineBuilder.toString();
+        }
+
+        for (String line : bannerLinesUC7) {
+            System.out.println(line);
+        }
     }
 
+    // ===== Helper Methods for UC6 =====
+
     static String[] getOPattern() {
-        return new String[] {
-            "  *****  ",
-            " *     * ",
-            " *     * ",
-            " *     * ",
-            " *     * ",
-            " *     * ",
-            "  *****  "
+        return new String[]{
+                "  *****  ",
+                " *     * ",
+                " *     * ",
+                " *     * ",
+                " *     * ",
+                " *     * ",
+                "  *****  "
         };
     }
 
     static String[] getPPattern() {
-        return new String[] {
-            " ******  ",
-            " *     * ",
-            " *     * ",
-            " ******  ",
-            " *       ",
-            " *       ",
-            " *       "
+        return new String[]{
+                " ******  ",
+                " *     * ",
+                " *     * ",
+                " ******  ",
+                " *       ",
+                " *       ",
+                " *       "
         };
     }
 
     static String[] getSPattern() {
-        return new String[] {
-            "  *****  ",
-            " *      ",
-            " *      ",
-            "  *****  ",
-            "       * ",
-            "       * ",
-            "  ****** "
+        return new String[]{
+                "  *****  ",
+                " *       ",
+                " *       ",
+                "  *****  ",
+                "       * ",
+                "       * ",
+                "  ****** "
         };
+    }
+
+    // ===== Inner Static Class for UC7 =====
+
+    static class CharacterPatternMap {
+
+        private final char character;
+        private final String[] pattern;
+
+        public CharacterPatternMap(char character, String[] pattern) {
+            this.character = character;
+            this.pattern = pattern;
+        }
+
+        public char getCharacter() {
+            return character;
+        }
+
+        public String[] getPattern() {
+            return pattern;
+        }
     }
 }

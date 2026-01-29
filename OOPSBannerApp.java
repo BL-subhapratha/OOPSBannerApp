@@ -23,5 +23,20 @@ public class OOPSBannerApp {
         System.out.println(String.join(" ", " *     * ", " *     * ", " *       ","       * "));
         System.out.println(String.join(" ", " *     * ", " *     * "," *       ","       * "));
         System.out.println(String.join(" ", "  *****  ","  *****  "," *       ","  ****** "));
+
+        //UC4: OOPS Banner using String Array and Loop
+        System.out.println("UC4: Print OOPS Banner using string array and loop");
+        String[] bannerLines = {
+            String.join(" ", "  *****  ", "  *****  ","  *****  ","  ****** "),
+            String.join(" "," *     * "," *     * "," *     * "," *      "),
+            String.join(" "," *     * "," *     * "," *     * "," *      "),
+            String.join(" "," *     * ", " *     * ", "  *****  ","  ****** "),
+            String.join(" ", " *     * ", " *     * ", " *       ","       * "),
+            String.join(" ", " *     * ", " *     * "," *       ","       * "),
+            String.join(" ", "  *****  ","  *****  "," *       ","  ****** ")
+        };
+        for (String line : bannerLines) {
+            System.out.println(line);
+        }
     }
 }
